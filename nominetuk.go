@@ -3,8 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
+	"github.com/pangpondpon/golang-epp/nominetuk"
 	"github.com/qiangxue/fasthttp-routing"
-	"golang-epp/nominetuk"
 )
 
 func nominetUkRoutes(nominet *routing.RouteGroup) {
