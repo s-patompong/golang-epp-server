@@ -1,13 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"github.com/qiangxue/fasthttp-routing"
 )
 
 func routes() *routing.Router {
 	router := routing.New()
 
-	router.Use(setHeader)
+	router.Use(setHeader, handleResponse)
 	nominetRoutes(router)
 
 	return router
@@ -15,5 +16,16 @@ func routes() *routing.Router {
 
 func setHeader(c *routing.Context) error {
 	c.SetContentType("application/json")
+	return nil
+}
+
+func handleResponse(c *routing.Context) error {
+	err := c.Next()
+
+	if err != nil {
+		fmt.Fprintf(c, err.Error())
+		return err
+	}
+
 	return nil
 }

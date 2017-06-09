@@ -19,7 +19,6 @@ func nominetUkDomainInfo(c *routing.Context) error {
 
 	nominetUk, err := nominetuk.NewNominetUk()
 	if err != nil {
-		fmt.Fprintf(c, err.Error())
 		return err
 	}
 
@@ -27,7 +26,6 @@ func nominetUkDomainInfo(c *routing.Context) error {
 
 	info, err := domain.Info(domainName)
 	if err != nil {
-		fmt.Fprintf(c, err.Error())
 		return err
 	}
 
