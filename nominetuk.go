@@ -34,3 +34,9 @@ func nominetUkDomainInfo(c *routing.Context) error {
 	fmt.Fprintf(c, response(info))
 	return nil
 }
+
+var handler routing.Handler
+
+func requestHandler(c *routing.Context) {
+
+}
