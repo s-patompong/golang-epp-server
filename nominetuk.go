@@ -17,7 +17,12 @@ func nominetUkDomainInfo(c *routing.Context) error {
 		return errors.New("No domain name")
 	}
 
-	nominetUk, _ := nominetuk.NewNominetUk()
+	nominetUk, err := nominetuk.NewNominetUk()
+	if err != nil {
+		fmt.Println(err)
+		return nil
+	}
+
 	domain := nominetUk.NewDomain()
 
 	info, err := domain.Info(domainName)
