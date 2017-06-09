@@ -30,7 +30,7 @@ func nominetUkDomainInfo(c *routing.Context) error {
 		return err
 	}
 
-	fmt.Fprintf(c, info.Name)
+	fmt.Fprintf(c, response(info))
 
 	return nil
 }
