@@ -23,7 +23,7 @@ func handleResponse(c *routing.Context) error {
 	err := c.Next()
 
 	if err != nil {
-		fmt.Fprintf(c, err.Error())
+		_, _ = fmt.Fprintf(c, err.Error())
 		return err
 	}
 
